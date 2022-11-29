@@ -1,0 +1,31 @@
+Heap ATD:
+
+Create
+O(1)
+
+Destroy
+O(n) - O(1)?
+
+Push
+O(log(n))
+
+Pop
+O(log(n))?
+
+Remove
+O(n)
+
+IsEmpty
+O(1)
+
+Size
+O(1)
+
+ForEach
+O(n)
+
+Peek - root
+O(1)
+
+Heapify - reada about it
+O(n)
