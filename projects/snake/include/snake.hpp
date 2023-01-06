@@ -15,8 +15,8 @@
 #include "board.hpp"
 #include "grow_token.hpp"
 
-#define SNAKE_START_SIZE (2)
-#define SNAKE_START_X (4)
+#define SNAKE_START_SIZE (4)
+#define SNAKE_START_X (7)
 #define SNAKE_START_Y (4)
 
 enum Direction

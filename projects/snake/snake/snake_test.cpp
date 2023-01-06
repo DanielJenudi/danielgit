@@ -27,6 +27,19 @@ int main()
     Board board;
     Snake snake(&board);
 
+    BeginMode2D(camera);
+
+    BeginDrawing();
+
+    board.Draw(RED, BLUE);
+    snake.Draw();
+
+    EndDrawing();
+
+    EndMode2D();
+
+    sleep(1);
+
     while (!WindowShouldClose())
     {
         if (IsKeyDown(KEY_LEFT))

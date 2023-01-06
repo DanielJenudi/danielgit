@@ -7,6 +7,8 @@
 #include <exception> //runtime_error
 #include <stdexcept> //runtime_error
 
+#include <iostream>
+
 #include "grow_token.hpp"
 
 GrowToken::GrowToken(Board *board)
@@ -28,9 +30,17 @@ void GrowToken::ReSpawn()
     size_t new_x = std::rand() % SQUAR_IN_BOARD_SIDE;
     size_t new_y = std::rand() % SQUAR_IN_BOARD_SIDE;
 
+    if (NOTHING == m_board->GetSquar(new_x, new_y)->GetContent())
+    {
+        m_token = m_board->GetSquar(new_x, new_y);
+        m_token->SetContent(GROW_TOKEN);
+        ++m_score;
+        return;
+    }
+
     for (size_t i = new_x; true; i = ((i + 1) % SQUAR_IN_BOARD_SIDE))
     {
-        for (size_t j = new_y; true; j = ((j + 1) % SQUAR_IN_BOARD_SIDE))
+        for (size_t j = 0; j != SQUAR_IN_BOARD_SIDE; ++j)
         {
             if (NOTHING == m_board->GetSquar(i, j)->GetContent())
             {
